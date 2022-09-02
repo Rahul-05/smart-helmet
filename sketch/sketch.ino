@@ -3,7 +3,6 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include "BluetoothSerial.h"
-
 int16_t val=0,val1=0;
 
 #if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
@@ -46,11 +45,11 @@ void loop() {
 //    Serial.write(SerialBT.read());
     display.setTextSize(1);
     display.setTextColor(WHITE);
-    display.setCursor(val,0);
+//    display.setCursor(val,0);
 //    display.println("Hello World");
     display.println((char)SerialBT.read());
     val=val+7;
-    if(val>=12){
+    if(val>=120){
       val1=val1+15;
       val=0;
     }
